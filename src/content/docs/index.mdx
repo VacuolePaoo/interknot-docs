@@ -1,0 +1,31 @@
+---
+title: Inter-Knot 绳网社区
+description: 绳网, InterKnot
+template: splash
+hero:
+  tagline: Welcome to Inter-Knot
+  image:
+    file: ../../assets/cover.png
+  actions:
+    - text: 查看文档
+      link: /guides/
+      icon: right-arrow
+      variant: primary
+    - text: 进入绳网
+      link: https://绳网.top/
+      icon: external
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## 热门教程
+
+<LinkCard
+  title="Markdown语法"
+  description="了解如何插入图片、富文本样式来丰富你的帖子"
+  href="/guides/markdown-syntax/"
+/>
+<CardGrid>
+	<LinkCard title="使用米游社表情包" href="/guides/hoyolab-emoticon/" description="了解如何在帖子中插入米游社表情包" />
+	<LinkCard title="Discord服务器守则" hred="/rules/discord-server/" description="怎样发消息才能不被禁言呢" />
+</CardGrid>

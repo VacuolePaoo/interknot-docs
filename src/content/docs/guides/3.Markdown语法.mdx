@@ -1,0 +1,535 @@
+---
+title: Markdown语法
+description: 本文介绍了Markdown的基本语法
+sidebar:
+  order: 3
+slug: guides/markdown-syntax
+banner:
+  content: |
+    文章作者：<a href="https://naxida.me/">纳西妲</a>  |  <a href="https://naxida.me/blog/markdown%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B">原文地址</a>
+---
+
+众所周知，Github支持Markdown语法，但一群为了绳网来Github的人对此不能说不了解，只能说一点也不知情。所以，纳西妲便编写了这篇帖子。
+
+（可能有错误或漏掉的地方，如果你发现了请指出来，我会修改。）
+
+## 1. 标题
+
+他们都是Markdown的标题：
+
+> # 一级标题
+>
+> ## 二级标题
+>
+> ### 三级标题
+>
+> #### 四级标题
+>
+> ##### 五级标题
+>
+> ###### 六级标题
+
+源码：
+
+```markdown
+# 一级标题
+
+## 二级标题
+
+### 三级标题
+
+#### 四级标题
+
+##### 五级标题
+
+###### 六级标题
+```
+
+其中，一二级标题还可以这样写（不推荐）：
+
+```markdown
+一级标题
+===
+
+二级标题
+---
+```
+
+注意：一到六级标题也可以用`<h1>内容</h1>`...`<h6>内容</h6>`的形式进行编写。
+
+## 2. 段落
+
+段落的前后要有空行，所谓的空行是指没有文字内容。若想在段内强制换行的方式是使用**两个以上**空格加上回车（引用中换行省略回车）。
+
+比如：
+
+> 段落1
+>
+> 段落二
+>
+> 我  
+> 换  
+> 行  
+> 了
+
+源码：
+
+```markdown
+段落1
+
+段落二
+
+我  
+换  
+行  
+了
+```
+
+## 3. 区块引用
+
+在段落的每行或者只在第一行使用符号`>`，在区块引用中也可以使用区块引用，如下：
+
+> 区块引用
+>
+> > 区块引用
+> >
+> > > 区块引用
+> > >
+> > > > 区块引用
+> > > >
+> > > > > 区块引用
+> > > > >
+> > > > > > 区块引用
+> > > > > >
+> > > > > > > 区块引用
+> > > > > > >
+> > > > > > > > 区块引用
+> > > > > > > >
+> > > > > > > > > 区块引用
+
+源码：
+
+```markdown
+> 区块引用
+>
+> > 区块引用
+> >
+> > > 区块引用
+> > >
+> > > > 区块引用
+> > > >
+> > > > > 区块引用
+> > > > >
+> > > > > > 区块引用
+> > > > > >
+> > > > > > > 区块引用
+> > > > > > >
+> > > > > > > > 区块引用
+> > > > > > > >
+> > > > > > > > > 区块引用
+```
+
+## 4. 代码区块
+
+代码区块以\`\`\`或`~~~`开始和结束，也可以在每行最前面加上4个空格或者一个制表符（不推荐，因为这样无法指明代码高亮）
+
+如下：
+
+> 代码区块：
+>
+> ```
+> fn main() {}
+> ```
+>
+> 指定高亮：
+>
+> ```rust
+> fn main() {}
+> ```
+>
+> 四个空格：
+>
+>  fn main() {}
+
+源码：
+
+````markdown
+代码区块：
+
+```
+fn main() {}
+```
+
+指定高亮：
+
+```rust
+fn main() {}
+```
+
+四个空格：
+
+    fn main() {}
+````
+
+## 5. 字体效果
+
+Markdown支持更改字体效果，如：
+
+### 5.1 斜体
+
+> _斜体_
+
+源码：
+
+```markdown
+_斜体_
+```
+
+### 5.2 粗体
+
+> **粗体**
+
+源码：
+
+```markdown
+**粗体**
+```
+
+### 5.3 删除线
+
+> ~~删除线~~
+
+源码：
+
+```markdown
+~~删除线~~
+```
+
+### 5.4 下滑线
+
+> <ins>下滑线</ins>
+
+源码：
+
+```markdown
+<ins>下滑线</ins>
+```
+
+## 6. 列表
+
+列表分为无序列表和有序列表
+
+### 6.1 无序列表
+
+使用`·`、`+`、或`-`标记无序列表，和区块引用一样，无序列表也能嵌套，如：
+
+> - 无序列表
+> - - 无序列表
+> - - - 无序列表
+> - - - - 无序列表
+> - - - - - 无序列表
+> - - - - - - 无序列表
+> - - - - - - - 无序列表
+> - - - - - - - - 无序列表
+> - - - - - - - - - 无序列表
+
+源码：
+
+```markdown
+- 无序列表
+- - 无序列表
+- - - 无序列表
+- - - - 无序列表
+- - - - - 无序列表
+- - - - - - 无序列表
+- - - - - - - 无序列表
+- - - - - - - - 无序列表
+- - - - - - - - - 无序列表
+```
+
+### 6.2 有序列表
+
+把第一个字符换成`数字+.`就行了，和无序列表一样，有序列表也能嵌套（不推荐嵌套，太TM乱了），如：
+
+> 1. 有序列表1
+> 2. 有序列表1
+> 3. 1. 有序列表
+> 4. 2. 有序列表
+> 5. 3. 1. 有序列表
+> 6. 4. 2. 有序列表
+> 7. 5. 3. 1. 有序列表
+> 8. 6. 4. 2. 有序列表
+> 9. 7. 5. 3. 1. 有序列表
+> 10. 8. 6. 4. 2. 有序列表
+
+源码：
+
+```markdown
+1. 有序列表1
+2. 有序列表1
+3. 1. 有序列表
+4. 2. 有序列表
+5. 3. 1. 有序列表
+6. 4. 2. 有序列表
+7. 5. 3. 1. 有序列表
+8. 6. 4. 2. 有序列表
+9. 7. 5. 3. 1. 有序列表
+10. 8. 6. 4. 2. 有序列表
+```
+
+### 6.3 任务列表
+
+任务列表允许您创建带有复选框的项目列表，如：
+
+> - [x] 起床
+> - [x] 吃饭
+> - [ ] 睡觉
+
+源码：
+
+```markdown
+- [x] 起床
+- [x] 吃饭
+- [ ] 睡觉
+```
+
+## 7. 分割线
+
+分割线用三个或三个以上的`-`、`*`或`_`生成，如：
+
+> a
+>
+> ---
+>
+> b
+
+源码：
+
+```markdown
+a
+
+---
+
+b
+```
+
+## 8. 图片
+
+图片使用`![乱写](图片地址)`添加，如：
+
+> ![web1](https://naxida.me/blog/Markdown使用教程/web1.png)
+>
+> ![web2](https://naxida.me/blog/Markdown使用教程/web2.png)
+>
+> ![web3](https://naxida.me/blog/Markdown使用教程/web3.png)
+
+源码：
+
+```markdown
+![web1](https://naxida.me/blog/Markdown使用教程/web1.png)
+
+![web2](https://naxida.me/blog/Markdown使用教程/web2.png)
+
+![web3](https://naxida.me/blog/Markdown使用教程/web3.png)
+```
+
+同样，图片也能使用超链接，使用`[![乱写](图片地址)](链接)`添加，如：
+
+> [![web1](https://naxida.me/blog/Markdown使用教程/web1.png)](https://naxida.me)
+>
+> [![web2](https://naxida.me/blog/Markdown使用教程/web2.png)](https://naxida.me/blog)
+>
+> [![web3](https://naxida.me/blog/Markdown使用教程/web3.png)](https://naxida.me/project)
+
+源码：
+
+```markdown
+[![web1](https://naxida.me/blog/Markdown使用教程/web1.png)](https://naxida.me)
+
+[![web2](https://naxida.me/blog/Markdown使用教程/web2.png)](https://naxida.me/blog)
+
+[![web3](https://naxida.me/blog/Markdown使用教程/web3.png)](https://naxida.me/project)
+```
+
+## 9. 标记
+
+标记使用 \` 符号开始和结束，如：
+
+> `Ctrl` + `c` 可以复制选中的文字， 比如你选中了`https://naxida.me`，按下`Ctrl` + `c`，就会复制到剪切板
+
+源码：
+
+```markdown
+`Ctrl` + `c` 可以复制选中的文字， 比如你选中了`https://naxida.me`，按下`Ctrl` + `c`，就会复制到剪切板
+```
+
+## 10. 表格
+
+通过三个及以上的`-`字符创建标题，使用`|`分割每列，开头和结尾也要加上`|`
+
+效果：
+
+> | 第1列   | 第2列   | 第3列   |
+> | ------- | ------- | ------- |
+> | 字符1.1 | 字符2.1 | 字符3.1 |
+> | 字符1.2 | 字符2.2 | 字符3.2 |
+> | 字符1.3 | 字符2.3 | 字符3.3 |
+> | 字符1.4 | 字符2.4 | 字符3.4 |
+
+源码：
+
+```markdown
+| 第1列   | 第2列   | 第3列   |
+| ------- | ------- | ------- |
+| 字符1.1 | 字符2.1 | 字符3.1 |
+| 字符1.2 | 字符2.2 | 字符3.2 |
+| 字符1.3 | 字符2.3 | 字符3.3 |
+| 字符1.4 | 字符2.4 | 字符3.4 |
+```
+
+### 10.1 表格的对齐
+
+在标题行`-`字符的左侧、右侧、两端添加`:`来将列中的文本向左、向右、居中对齐
+
+效果：
+
+> | 左     |   居中   |     右 |
+> | :----- | :------: | -----: |
+> | 左对齐 | 居中对齐 | 右对齐 |
+> | 左对齐 | 居中对齐 | 右对齐 |
+> | 左对齐 | 居中对齐 | 右对齐 |
+> | 左对齐 | 居中对齐 | 右对齐 |
+
+源码：
+
+```markdown
+| 左     |   居中   |     右 |
+| :----- | :------: | -----: |
+| 左对齐 | 居中对齐 | 右对齐 |
+| 左对齐 | 居中对齐 | 右对齐 |
+| 左对齐 | 居中对齐 | 右对齐 |
+| 左对齐 | 居中对齐 | 右对齐 |
+```
+
+## 11. 上下标
+
+使用`<sup>内容</sup>`表示上标，使用`<sub>内容</sub>`表示下标，如：
+
+> 我最近拿别人的模板主题<sub>[这个](https://www.bilibili.com/video/BV1QM4m1276h)</sub>搭了个网站<sup>[在这里](https://naxida.me)</sup>
+
+源码：
+
+```markdown
+我最近拿别人的模板主题<sub>[这个](https://www.bilibili.com/video/BV1QM4m1276h)</sub>搭了个网站<sup>[在这里](https://naxida.me)</sup>
+```
+
+## 12. 效果
+
+使用`<div 一些效果>`开始一个效果的生效范围，`</div>`结束生效。
+
+效果：
+
+> <div align="left">居左</div>
+> <div align="center">居中</div>
+> <div align="right">居右</div>
+
+源码：
+
+```markdown
+<div align="left">居左</div>
+<div align="center">居中</div>
+<div align="right">居右</div>
+```
+
+标题也能这样用：
+
+> <h3 align="left">居左</h3>
+> <h3 align="center">居中</h3>
+> <h3 align="right">居右</h3>
+
+源码：
+
+```markdown
+<h3 align="left">居左</h3>
+<h3 align="center">居中</h3>
+<h3 align="right">居右</h3>
+```
+
+## 13. 图片的高级用法
+
+在你Github主题为浅色时它是一个太阳，在你使用深色主题时它是月亮：
+
+
+源码：
+
+```markdown
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://naxida.me/blog/Markdown使用教程/dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://naxida.me/blog/Markdown使用教程/light.png">
+  <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://naxida.me/blog/Markdown使用教程/light.png">
+</picture>
+```
+
+## 14. 内联HTML
+
+你所看到的所有`<标签>内容</标签>`之类的语法都是HTML的语法，你可以在Markdown中使用绝大多数标准的HTML标签，如：
+
+> <a href="https://naxida.me">我的网站</a>
+>
+> 这个**字**是粗体，这个<em>字</em>是斜体.
+>
+> <div align="center">
+>
+> ### 你甚至能混合使用Markdown和HTML
+>
+> </div>
+
+源码：
+
+```markdown
+<a href="https://naxida.me">我的网站</a>
+
+这个**字**是粗体，这个<em>字</em>是斜体.
+
+<div align="center">
+
+### 你甚至能混合使用Markdown和HTML
+
+</div>
+```
+
+## 15. 脚注
+
+脚注允许您添加注释和参考文献，而不会弄乱文档的正文。创建脚注时，您添加脚注引用的位置会出现带有链接的上标编号。读者可以点击链接跳转至页面底部脚注内容。
+
+要创建脚注引用，请在方括号 ( [^1] ) 内添加插入符号和标识符。标识符可以是数字或单词，但不能包含空格或制表符。标识符仅将脚注与脚注本身相关联 - 显示起来，脚注按顺序编号。
+
+效果：
+
+> Here's a simple footnote,[^1] and here's a longer one.[^bignote]
+>
+> [^1]: This is the first footnote.
+>
+> [^bignote]: Here's one with multiple paragraphs and code.
+>
+>  Indent paragraphs to include them in the footnote.
+>
+>  `{ my code }`
+>
+>  Add as many paragraphs as you like.
+
+源码：
+
+```markdown
+Here's a simple footnote,[^1] and here's a longer one.[^bignote]
+
+[^1]: This is the first footnote.
+
+[^bignote]: Here's one with multiple paragraphs and code.
+
+    Indent paragraphs to include them in the footnote.
+
+    `{ my code }`
+
+    Add as many paragraphs as you like.
+```
